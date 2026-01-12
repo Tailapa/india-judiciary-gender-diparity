@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal Recipes of Exclusion | Research Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .geometric-bg {
+            background-image: linear-gradient(30deg, #1e3a8a 12%, transparent 12.5%, transparent 87%, #1e3a8a 87.5%, #1e3a8a),
+            linear-gradient(150deg, #1e3a8a 12%, transparent 12.5%, transparent 87%, #1e3a8a 87.5%, #1e3a8a),
+            linear-gradient(30deg, #1e3a8a 12%, transparent 12.5%, transparent 87%, #1e3a8a 87.5%, #1e3a8a),
+            linear-gradient(150deg, #1e3a8a 12%, transparent 12.5%, transparent 87%, #1e3a8a 87.5%, #1e3a8a),
+            linear-gradient(60deg, #1e40af 25%, transparent 25.5%, transparent 75%, #1e40af 75%, #1e40af),
+            linear-gradient(60deg, #1e40af 25%, transparent 25.5%, transparent 75%, #1e40af 75%, #1e40af);
+            background-size: 80px 140px; background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+            opacity: 0.03; position: fixed; width: 100%; height: 100%; z-index: -1;
+        }
+        .sidebar { height: 100vh; position: sticky; top: 0; }
+        .card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .accent-border { border-left: 4px solid #1e40af; }
+    </style>
+</head>
+<body class="flex">
+    <div class="geometric-bg"></div>
+
+    <nav class="sidebar w-64 bg-slate-900 text-slate-300 p-6 hidden md:block">
+        <h2 class="text-white font-bold mb-8 text-xl tracking-tight">ToC</h2>
+        <ul class="space-y-4 text-sm">
+            <li><a href="#abstract" class="hover:text-blue-400">Abstract</a></li>
+            <li><a href="#intro" class="hover:text-blue-400">Introduction</a></li>
+            <li><a href="#motivation" class="hover:text-blue-400">Motivation & Objective</a></li>
+            
+            <li><a href="#research_question" class="hover:text-blue-400">Research Question</a></li>
+            <li><a href="#concepts" class="hover:text-blue-400">Concepts & Measurement</a></li>
+            <li><a href="#method" class="hover:text-blue-400">Research Method</a></li>
+            <li><a href="#conclusion" class="hover:text-blue-400">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <main class="flex-1 p-8 md:p-16 max-w-5xl mx-auto">
+        <header class="mb-10">
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight text-center">Causal Recipes of Exclusion</h1>
+    <p class="text-lg text-slate-600 mb-5 text-center">Dissecting Systemic Barriers in Indian Higher Judiciary</p>
+    
+    <div class="flex items-center justify-center gap-6 border-t border-slate-200 pt-3 max-w-xs mx-auto">
+        <div class="text-center">
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-slate-400">Author</span>
+            <p class="text-sm font-semibold text-slate-800">Shashank Venkatesh</p>
+        </div>
+        
+        <div class="h-8 w-[1px] bg-slate-200"></div>
+        
+        <div class="text-center">
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-1">Published</span>
+            <p class="text-sm font-semibold text-slate-800">12 January 2026</p>
+        </div>
+    </div>
+
+        <section id="abstract" class="card p-8 mb-10 mt-10 accent-border">
+            <h2 class="text-2xl font-bold mb-4 text-blue-900 uppercase tracking-wide">Abstract</h2>
+            <p class="leading-relaxed text-justify">This paper utilizes fsQCA  to analyse the severe under-representation of women
+            in India’s higher judiciary, a crisis threatening our institutional legitimacy, and global standing. 
+            We conceptualise this gender disparity using four causal factors: Structural, Institutional, Procedural 
+            and  Socio-Cultural. By analysing all 25 high courts and the Supreme Court of India, this study aims to 
+            identify the specific necessary and sufficient causal configurations that sustain this disparity. At the 
+            end of this research, we aim to recommend targeted, evidence-based, and practical policy levers to 
+            facilitate representative and gender inclusive judicial institutions.</p>
+        </section>
+
+        <section id="intro" class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 text-slate-800">Introduction</h2>
+            <div class="card p-6 bg-[#fff]">
+                <p class="mb-4 text-slate-700 text-justify">India's ambition to be a developed nation by 2047 requires its judiciary 
+                to be representative, yet it's higher judicial institutions are under-representative of women, 
+                highlighted by past controversial verdicts which necessitate inclusive benches. Prior research 
+                failed to holistically capture the complex combination of systemic barriers that sustain 
+                <strong>Gender Disparity (D)</strong>. This study’s objective is to utilise <strong>fuzzy-set Qualitative Comparative Analysis (fsQCA)</strong> 
+                to overcome <strong>D</strong> by identifying causal configurations among <strong>Structural (S), Institutional (I), Procedural (P)</strong>, 
+                and <strong>Socio-Cultural (C)</strong> factors to propose evidence-based policy reforms.</p>
+                <p class="font-semibold text-blue-800"></p>
+            </div>
+        </section>
+
+        <section id="motivation" class="mb-10">
+            <h2 class="text-2xl font-bold mb-4 text-slate-800">Motivation and Objective</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card p-6">
+                    <h3 class="font-bold text-blue-700 mb-2">The Crisis </h3>
+                    <ul class="list-disc ml-5 space-y-2 text-sm text-justify">
+                        <li>Only 9% female representation in higher judiciary. </li>
+                        <li>Comparison: USA (44%), UK (25%), Canada (44%). [cite: 24]</li>
+                    </ul>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-blue-700 mb-2">Impact</h3>
+                    <p class="text-sm text-justify">Such compromised institutions may not have the moral 
+                    authority to deliver effective justice and may lead to controversial verdicts 
+                    as seen in Mathura Case (1978) and Re: Matter of Great Public Importance…(2019).</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <!--
+        "bg-slate-900 text-slate-200 p-10 rounded-xl text" -->
+        
+         <section id="research_question" class="bg-slate-900 text-slate-200 p-10 rounded-xl text">
+            <h2 class="text-2xl font-bold mb-4">Research Question</h2>
+            <p class="text-400 mb-6 text-justify">How do complex causal factors like <strong>Structural (S), Institutional (I), Procedural (P)</strong>, 
+                and <strong>Socio-Cultural (C)</strong> barriers interplay to sustain D in Indian higher judiciary?</p>
+            <div class="text-xs text-500 tracking-widest"> <strong>NOTE:</strong> There has never been a woman Chief Justice of India, 
+            despite nearly 80 years of independence
+            </div>
+        </section>
+
+        <section id="concepts" class="mb-10 mt-10">
+    <h2 class="text-2xl font-bold mb-4 text-slate-800">Concepts & Measurement</h2>
+    
+    <div class="card p-8 bg-white border border-slate-200 rounded-xl shadow-sm">
+        <h3 class="text-lg font-bold text-blue-900 mb-4 border-b pb-2">
+            Defining Gender Disparity (D) in the Higher Judiciary (H)
+        </h3>
+        
+        <p class="mb-6 text-slate-700 text-justify leading-relaxed">
+            D in H of India is defined as a sustained, severe, and systemic shortfall in the representation of women judges in the <strong>Supreme Court (SC)</strong> and <strong>High Courts (HC)</strong>. This lack of gender diversity visibly impacts the institutional legitimacy and global standing of the courts.
+        </p>
+
+        <ul class="space-y-4 text-sm text-slate-700">
+            <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>
+                    <strong class="text-slate-900">Conceptual Framework:</strong> D (Level 1 or L1) is captured holistically employing <strong>Gary Goertz’s conceptualization</strong> (Social Science Concepts and Measurement, 2020).
+                </span>
+            </li>
+
+            <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>
+                    <strong class="text-slate-900">Macro-Dimensions:</strong> The framework consists of four constituent conditions serving as <strong>Level 2 (L2) causal factors</strong>.
+                </span>
+            </li>
+
+            <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>
+                    <strong class="text-slate-900">Micro-Dimensions:</strong> L2 dimensions are measured using <strong>10 specific indicators (Level 3 or L3)</strong> as detailed in Table 1 and visualized in Figure 1.
+                </span>
+            </li>
+        </ul>
+    </div>
+      <div class="my-10 flex justify-center">
+    <figure class="card p-4 bg-white shadow-md text-center">
+        <img src="data/concept.png" 
+             alt="Conceptualization of Gender Disparity using Gary Goertz’s 3 Level framework" 
+             class="max-w-full h-auto rounded-lg">
+        <figcaption class="mt-4 text-sm text-slate-500 italic">
+            Figure 1: Conceptualization of Gender Disparity (D) using Gary Goertz’s 3 Level framework
+        </figcaption>
+    </figure>
+</div>
+
+
+<div class="my-10 overflow-hidden card border border-slate-200">
+    <div class="bg-slate-50 p-4 border-b border-slate-200">
+        <h3 class="font-bold text-slate-800 text-lg">Table 1: Conceptualization and Measurement of Gender Disparity (D) using Gary Goertz’s framework</h3>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-blue-900 text-white text-sm uppercase tracking-wider">
+                    <th class="p-4 font-bold border-r border-blue-800 w-1/4">Macro Dimensions (L2)</th>
+                    <th class="p-4 font-bold">Micro Dimensions (L3 Indicators)</th>
+                </tr>
+            </thead>
+            <tbody class="text-slate-700 text-sm text-justify">
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                    <td class="p-4 font-bold text-blue-900 align-top bg-blue-50/30 border-r border-slate-200">
+                        Structural Factors (S)
+                    </td>
+                    <td class="p-4 space-y-3">
+                        <p><span class="font-bold text-slate-900 ">1. Network Support Deficit Index (NSDI):</span> Percentage of women candidates appointed to HCs/SC without inherited legal family background, compared to male counterparts.</p>
+                        <p><span class="font-bold text-slate-900">2. Vertical Representation Gap (VRG):</span> The ratio of women's representation in HCs to their representation in the SC.</p>
+                    </td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                    <td class="p-4 font-bold text-blue-900 align-top bg-blue-50/30 border-r border-slate-200">
+                        Institutional Factors (I)
+                    </td>
+                    <td class="p-4 space-y-3">
+                        <p><span class="font-bold text-slate-900">1. Infrastructure Compliance Index (ICI):</span> Percentage of HCs with functional gender-sensitive amenities (e.g., creches).</p>
+                        <p><span class="font-bold text-slate-900">2. Policy Gap Score (PGS):</span> Whether Policy exist mandating reservation.</p>
+                        <p><span class="font-bold text-slate-900">3. Accessibility Index (AI):</span> Measures the gendered financial barriers to entering the legal network.</p>
+                    </td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                    <td class="p-4 font-bold text-blue-900 align-top bg-blue-50/30 border-r border-slate-200">
+                        Procedural Factors (P)
+                    </td>
+                    <td class="p-4 space-y-3">
+                        <p><span class="font-bold text-slate-900">1. Opacity of Collegium Appointments (OCA):</span> Percentage of Collegium resolutions that lack justifications for selection/rejection of women.</p>
+                        <p><span class="font-bold text-slate-900">2. Supersession Ratio Disparity (SRD):</span> Frequency with which eligible women HC judges are superseded by junior male judges for elevation.</p>
+                        <p><span class="font-bold text-slate-900">3. Ratio of Discretionary Delay (RDD):</span> Ratio of the average time taken by Executive to notify appointments of women vs. male judges.</p>
+                    </td>
+                </tr>
+                <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="p-4 font-bold text-blue-900 align-top bg-blue-50/30 border-r border-slate-200">
+                        Socio-Cultural Factors (C)
+                    </td>
+                    <td class="p-4 space-y-3">
+                        <p><span class="font-bold text-slate-900">1. Time Use Disparity Index (TUDI):</span> Differential time in hours spent by women vs. men judges on unpaid domestic care work.</p>
+                        <p><span class="font-bold text-slate-900">2. Gendered Media Scrutiny Index (GMSI):</span> Percentage of media coverage focusing on women judges’ personal lives over professional merit, compared to male judges.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+      
+          
+        </section>
+        
+        
+
+       <section id="method" class="mb-10">
+    <h2 class="text-2xl font-bold mb-4 text-slate-800 tracking-tight">Research Method: 4-Step fsQCA</h2>
+    
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+        
+        <div class="p-8 pb-0">
+            <p class="text-sm leading-relaxed text-slate-600 text-justify">
+                We propose to utilize <strong>fuzzy-set Qualitative Comparative Analysis (fsQCA)</strong> to determine the <strong>Necessary and Sufficient Conditions (N/S)</strong> for sustaining Gender Disparity (D) in the Higher Judiciary (H). This method is optimal for analyzing small to medium samples (N=26), facilitating the identification of "causal recipes"—specific configurations of conditions that consistently lead to the outcome.
+            </p>
+        </div>
+
+        <div class="p-8 flex flex-col md:flex-row items-center justify-around gap-8 relative">
+            <div class="text-center z-10">
+                <span class="block text-[11px] uppercase tracking-[0.2em] font-bold text-rose-400 mb-3">Causal Conditions</span>
+                <div class="font-mono text-4xl font-black text-blue-900 bg-white px-6 py-4 rounded-xl shadow-md border border-slate-100 min-w-[160px]">
+                    {S, I, P, C}
+                </div>
+            </div>
+
+            <div class="text-slate-300 hidden md:block">
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <div class="text-center z-10">
+                <span class="block text-[11px] uppercase tracking-[0.2em] font-bold text-rose-400 mb-3">Primary Outcome</span>
+                <div class="font-mono text-4xl font-black text-yellow-600 bg-white px-8 py-4 rounded-xl shadow-md border border-slate-100 min-w-[100px]">
+                    D
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-4 my-8">
+        <div class="h-[1px] flex-grow bg-slate-200"></div>
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.25em]">
+            Execution Pipeline
+        </p>
+        <div class="h-[1px] flex-grow bg-slate-200"></div>
+    </div>
+
+    <div class="space-y-6 mt-5">
+        <div class="card p-6">
+            <h3 class="font-bold text-slate-700 border-b pb-2 mb-4 flex items-center">
+                <span class="bg-blue-900 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">1</span>
+                Step 1: Data Collection and Case Selection
+            </h3>
+            
+            <ul class="text-sm space-y-4 text-slate-700">
+                <li class="flex flex-col">
+                    <span class="font-bold text-blue-900 mb-1">Case Selection:</span>
+                    <p class="pl-4 border-l-2 border-slate-100 text-justify">
+                        The sample comprises all 25 HCs and the SC of India (N=26) from 1993 onwards. Each institution serves as a unique case for the fsQCA analysis.
+                    </p>
+                </li>
+
+                <li class="flex flex-col">
+                    <span class="font-bold text-blue-900 mb-2">Data Sources:</span>
+                    <div class="pl-4">
+                        <ul class="grid md:grid-cols-2 gap-2 list-none">
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Official records (Dept. of Justice, SC/HC websites) 
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Periodic reports (India Justice Report) 
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Interviews (Judges and Advocates) 
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Quantitative analysis of judicial tenure, and Collegium resolutions (through RTI)
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Qualitative analysis (social media/print media reports for GMSI, policy analysis for PGS). 
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+                 
+     <div class="card p-6 mt-6 border border-slate-200 shadow-sm rounded-xl bg-white mb-6">
+    <h3 class="font-bold text-slate-700 border-b pb-2 mb-4 flex items-center">
+        <span class="bg-blue-900 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">2</span>
+        Step 2: Calibration and Fuzzy-Set Score Assignment
+    </h3>
+    
+    <div class="space-y-4 mb-6">
+        <ul class="text-sm space-y-3 text-slate-700 text-justify">
+            <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Converted analyzed/measured <strong>L3 indicators</strong> into fuzzy-set membership scores ranging from <strong>0 to 1</strong>.</span>
+            </li>
+            <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Calibration of indicators (L3, macro-dimensions S, I, P, C, and outcome D) produces a unified membership score for each case.</span>
+            </li>
+            <li class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>Aggregation of L3 indicators into L2 dimensions is performed using <strong>additive logic</strong> within the fsQCA framework.</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="bg-slate-50 p-4 mt-5 rounded text-xs grid grid-cols-3 gap-4">
+                        <div><strong>0 (Full Non-Member):</strong> RDD <= 1.0 </div>
+                        <div><strong>0.5 (Crossover):</strong> RDD = 1.5 </div>
+                        <div><strong>1 (Full Member):</strong> RDD >= 2.5 </div>
+                    </div>
+
+</div>
+                <div class="card p-6 border border-slate-200 shadow-sm rounded-xl bg-white mt-6">
+    <h3 class="font-bold text-slate-700 border-b pb-2 mb-4 flex items-center">
+        <span class="bg-blue-900 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">3</span>
+        Step 3: Identifying N/S Conditions
+    </h3>
+    
+    <div class="space-y-4">
+        <div class="flex items-start">
+            <div class="mt-1 flex-shrink-0 text-justify">
+                 <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed text-justify">
+                <strong class="text-blue-900">Necessary (N) Test:</strong> Condition must always be present when <strong>D</strong> occurs. Hence, the fuzzy-set score for all L2 dimensions across each case need to be <strong>consistent (must be > 0.9)</strong>. If not, the condition is not necessary.
+            </p>
+        </div>
+
+        <div class="flex items-start">
+            <div class="mt-1 flex-shrink-0">
+                 <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed text-justify">
+                <strong class="text-blue-900">Sufficient (S) Test:</strong> To identify which configurations of L2 dimensions (e.g., <span class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">S*P + I*C</span>) are sufficient for <strong>D</strong> to occur. Hence, the combination must <strong>cover at least 80% cases</strong> and the corresponding L2 dimensions need to maintain <strong>consistent fuzzy-set score > 0.8</strong>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="card p-6 border border-slate-200 shadow-sm rounded-xl bg-white mt-6">
+    <h3 class="font-bold text-slate-700 border-b pb-2 mb-4 flex items-center">
+        <span class="bg-blue-900 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">4</span>
+        Step 4: Interpretation and Policy Recommendations
+    </h3>
+    
+    <div class="space-y-4">
+        <div class="flex items-start">
+            <div class="mt-1 flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed text-justify">
+                The execution of this research exercise would enable us to identify the combination of <strong>Causal Conditions</strong> that are <strong>N/S for D</strong> to occur across all cases. It would also facilitate <strong>comparative analysis</strong> of each case, enabling us to identify the barriers that are specific to a particular institutional context.
+            </p>
+        </div>
+
+        <div class="flex items-start">
+            <div class="mt-1 flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed text-justify">
+                This would provide us with <strong>evidence-based and context-specific practical levers</strong> for policy intervention, fulfilling our objective of presenting targeted solutions rather than generic mandates.
+            </p>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </section>
+
+        <footer id="conclusion" class="bg-slate-900 text-slate-200 p-10 rounded-xl text-left">
+            <h2 class="text-2xl uppercase font-bold mb-4">Conclusion</h2>
+            <p class="text-slate-100 mb-8 leading-relaxed text-justify">This design, driven by fsQCA analysis will successfully isolate the parsimonious causal pathway sustaining D in Indian H. By identifying the N/S conditions from the complex causal configurations, the study moves beyond generic solutions. Once executed, the findings will provide the relevant stakeholders with practical, evidence-based policy interventions tailored to specific institutional contexts, achieving the urgent need for a truly inclusive, and credible higher judiciary.</p>
+            <div class="text-xs text-slate-500 uppercase tracking-widest"></div>
+        </footer>
+    </main>
+</body>
+</html>
